@@ -1,0 +1,26 @@
+{
+    "name": "rbcyber-api-dev",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "APIs and routes for rbcyber Linux server",
+    "main": "./src/index.js",
+    "scripts": {
+        "start": "node ./src/index.js",
+        "dev": "nodemon ./src/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rbcyber1/rbcyber-api.git"
+    },
+    "author": "rbcyber1",
+    "license": "Unlicense",
+    "bugs": {
+        "url": "https://github.com/rbcyber1/rbcyber-api/issues"
+    },
+    "homepage": "https://github.com/rbcyber1/rbcyber-api#readme",
+    "dependencies": {
+        "dotenv": "^17.4.1",
+        "express": "^5.2.1",
+        "nodemon": "^3.1.14"
+    }
+}
