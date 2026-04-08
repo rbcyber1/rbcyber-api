@@ -17,5 +17,5 @@ jobs:
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
                   port: ${{ secrets.SSH_PORT }}
                   script: |
-                      sudo systemctl restart api.rbcyber.org.service
+                      sudo systemctl restart rbcyber-api.service
                       sudo wall "api.rbcyber.org has been rebuilt from GitHub."
