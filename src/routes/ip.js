@@ -25,7 +25,7 @@ router.get("/", async (request, response) => {
         return response
             .status(400)
             .type("text/plain")
-            .send("Invalid type parameter. Use 'ipv4' or 'ipv6'.");
+            .send("Invalid type parameter. Use 'v4' or 'v6'.");
     }
 
     try {
