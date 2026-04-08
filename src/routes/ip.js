@@ -34,7 +34,7 @@ router.get("/", async (request, response) => {
             response.type("text/plain").send(address);
         } else {
             response
-                .status(404)
+                .status(422)
                 .type("text/plain")
                 .send(`No IP${type} address found for the client.`);
         }
