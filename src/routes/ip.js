@@ -1,6 +1,8 @@
 import express from "express";
+import auth from "../middleware/auth.js";
 
 const router = express.Router();
+router.use(auth);
 
 const getAddressByType = async (type) => {
     const responseV4 = await fetch("https://api.ipify.org");
