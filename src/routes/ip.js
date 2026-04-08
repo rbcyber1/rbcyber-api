@@ -1,6 +1,8 @@
 import express from "express";
+import auth from "../middleware/auth.js";
 
 const router = express.Router();
+router.use(auth);
 
 const getAddressByType = async (type) => {
     const responseV4 = await fetch("https://api.ipify.org");
@@ -23,7 +25,7 @@ router.get("/", async (request, response) => {
         return response
             .status(400)
             .type("text/plain")
-            .send("Invalid type parameter. Use 'ipv4' or 'ipv6'.");
+            .send("Invalid type parameter. Use 'v4' or 'v6'.");
     }
 
     try {
@@ -32,14 +34,14 @@ router.get("/", async (request, response) => {
             response.type("text/plain").send(address);
         } else {
             response
-                .status(404)
+                .status(422)
                 .type("text/plain")
                 .send(`No IP${type} address found for the client.`);
         }
     } catch (error) {
         console.error("Error fetching IP address:", error);
         response
-            .status(500)
+            .status(502)
             .type("text/plain")
             .send("An error occurred while fetching the IP address.");
     }
