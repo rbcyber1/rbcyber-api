@@ -8,6 +8,10 @@ const port = process.env.RBCYBER_API_PORT || 8000;
 app.use(express.json());
 app.use("/ip", ipRoutes);
 
+app.get("/", (req, res) => {
+    res.redirect("https://rbcyber.org");
+});
+
 app.listen(port, () => {
     console.log(`API running on port ${port}`);
 });
