@@ -41,7 +41,7 @@ router.get("/", async (request, response) => {
     } catch (error) {
         console.error("Error fetching IP address:", error);
         response
-            .status(500)
+            .status(502)
             .type("text/plain")
             .send("An error occurred while fetching the IP address.");
     }
